@@ -1,0 +1,19 @@
+2022-04-22 19:02:49,786:INFO:pegasus-monitord(58): pegasus-monitord starting - pid 1193 
+2022-04-22 19:02:49,795:INFO:pegasus-monitord(456): Final Command line options are: ['-N', 'example-0.dag.dagman.out']
+2022-04-22 19:02:49,797:INFO:Pegasus.monitoring.event_output(630): Connecting workflow event sink to sqlite:////srv/submituser/pegasus/example/run0002/example-0.stampede.db
+Pegasus database was successfully created.
+Database version: '5.0.1' (sqlite:////srv/submituser/pegasus/example/run0002/example-0.stampede.db)
+2022-04-22 19:02:50,317:INFO:Pegasus.monitoring.event_output(704): output type=DB namespace=stampede. name=sqlite:////srv/submituser/pegasus/example/run0002/example-0.stampede.db
+2022-04-22 19:02:50,317:INFO:Pegasus.monitoring.event_output(630): Connecting workflow event sink to sqlite:////home/submituser/.pegasus/workflow.db
+Database version: '5.0.1' (sqlite:////home/submituser/.pegasus/workflow.db)
+2022-04-22 19:02:50,545:INFO:Pegasus.monitoring.event_output(704): output type=DB namespace=dashboard. name=sqlite:////home/submituser/.pegasus/workflow.db
+2022-04-22 19:02:50,545:INFO:pegasus-monitord(1253): monitord started in fast start mode
+2022-04-22 19:02:50,572:INFO:Pegasus.monitoring.workflow(461): cannot open state file /srv/submituser/pegasus/example/run0002/monitord.info, continuing without state...
+2022-04-22 19:02:50,572:INFO:Pegasus.monitoring.workflow(1148): creating new file /srv/submituser/pegasus/example/run0002/jobstate.log
+2022-04-22 19:02:50,572:INFO:Pegasus.monitoring.workflow(1158): Appending to existing jobstate.log replay_mode 0 previous_processed_line 0
+2022-04-22 19:02:50,573:INFO:Pegasus.monitoring.notifications(474): loading notifications from /srv/submituser/pegasus/example/run0002/example-0.notify
+2022-04-22 19:02:50,762:INFO:Pegasus.monitoring.workflow(205): Parsing DAG file /srv/submituser/pegasus/example/run0002/example-0.dag
+2022-04-22 19:02:50,763:INFO:pegasus-monitord(980): Using DAGMan version 9.2.0 90200
+2022-04-22 19:02:50,763:INFO:pegasus-monitord(955): DAGMan runs at pid 1190
+2022-04-22 19:02:50,767:INFO:pegasus-monitord(961): using dag example-0.dag
+2022-04-22 19:02:50,767:INFO:Pegasus.monitoring.workflow(811): DAGMan starting with condor id 2.0

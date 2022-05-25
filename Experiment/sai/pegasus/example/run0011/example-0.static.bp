@@ -1,0 +1,11 @@
+ts=2022-04-22T06:34:00.156101Z event=task.info xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 task.id="t4" type="1" type_desc="compute" transformation="tar" argv="-czvf ds6.tar.gz input/ds3.txt input/ds4.txt ds6.txt" 
+ts=2022-04-22T06:34:00.156382Z event=task.info xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 task.id="t2" type="1" type_desc="compute" transformation="tar" argv="-czvf result.tar.gz input/ds1.txt input/ds2.txt ds6.txt" 
+ts=2022-04-22T06:34:00.158083Z event=task.info xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 task.id="t3" type="1" type_desc="compute" transformation="tar" argv="-czvf result.tar.gz input/ds1.txt input/ds2.txt input/ds3.txt ds6.txt" 
+ts=2022-04-22T06:34:00.158214Z event=task.info xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 task.id="t1" type="1" type_desc="compute" transformation="tar" argv="-czvf result.tar.gz input/ds1.txt input/ds2.txt" 
+ts=2022-04-22T06:34:00.158386Z event=task.info xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 task.id="t5" type="1" type_desc="compute" transformation="unzip" argv="input/ds5.tar.gz" 
+ts=2022-04-22T06:34:00.158582Z event=task.edge xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 parent.task.id="t5" child.task.id="t4" 
+ts=2022-04-22T06:34:00.158682Z event=task.edge xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 parent.task.id="t5" child.task.id="t2" 
+ts=2022-04-22T06:34:00.158844Z event=task.edge xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 parent.task.id="t5" child.task.id="t3" 
+ts=2022-04-22T06:34:00.203577Z event=static.meta.start xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 
+ts=2022-04-22T06:34:00.203771Z event=xwf.meta xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 key="wf.api" value="python" 
+ts=2022-04-22T06:34:00.203902Z event=static.meta.end xwf.id=29df4415-f214-4580-bbdb-b2b04af8f5b2 

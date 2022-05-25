@@ -1,0 +1,29 @@
+[
+ { "type": "transfer",
+   "linkage": "input",
+   "lfn": "ds3.txt",
+   "id": 1,
+   "attributes": {
+     "creator":"sai"
+   },
+   "src_urls": [
+     { "site_label": "local", "url": "/srv/input/ds3.txt", "priority": 10 }
+   ],
+   "dest_urls": [
+     { "site_label": "local", "url": "file:///srv/scratch/submituser/pegasus/example/run0001/./ds3.txt" }
+   ] }
+ ,
+ { "type": "transfer",
+   "linkage": "input",
+   "lfn": "ds4.txt",
+   "id": 2,
+   "attributes": {
+     "creator":"sai"
+   },
+   "src_urls": [
+     { "site_label": "local", "url": "/srv/input/ds4.txt", "priority": 10 }
+   ],
+   "dest_urls": [
+     { "site_label": "local", "url": "file:///srv/scratch/submituser/pegasus/example/run0001/./ds4.txt" }
+   ] }
+]

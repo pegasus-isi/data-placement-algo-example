@@ -1,0 +1,59 @@
+000 (003.000.000) 2022-04-22 19:02:50 Job submitted from host: <172.18.0.3:9618?addrs=172.18.0.3-9618&alias=aee91ccc3f7d&noUDP&sock=schedd_26_698d>
+    DAG Node: create_dir_example_0_local
+    pool:local
+...
+001 (003.000.000) 2022-04-22 19:02:50 Job executing on host: <172.18.0.3:9618?addrs=172.18.0.3-9618&alias=aee91ccc3f7d&noUDP&sock=starter_29_2eda_6>
+...
+005 (003.000.000) 2022-04-22 19:02:52 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (004.000.000) 2022-04-22 19:03:05 Job submitted from host: <172.18.0.3:9618?addrs=172.18.0.3-9618&alias=aee91ccc3f7d&noUDP&sock=schedd_26_698d>
+    DAG Node: stage_in_local_local_0_0
+    pool:local
+...
+000 (005.000.000) 2022-04-22 19:03:05 Job submitted from host: <172.18.0.3:9618?addrs=172.18.0.3-9618&alias=aee91ccc3f7d&noUDP&sock=schedd_26_698d>
+    DAG Node: stage_in_local_local_1_0
+    pool:local
+...
+001 (004.000.000) 2022-04-22 19:03:05 Job executing on host: <172.18.0.3:9618?addrs=172.18.0.3-9618&alias=aee91ccc3f7d&noUDP&sock=starter_29_2eda_12>
+...
+001 (005.000.000) 2022-04-22 19:03:05 Job executing on host: <172.18.0.3:9618?addrs=172.18.0.3-9618&alias=aee91ccc3f7d&noUDP&sock=starter_29_2eda_15>
+...
+005 (004.000.000) 2022-04-22 19:03:09 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+005 (005.000.000) 2022-04-22 19:03:09 Job terminated.
+	(1) Normal termination (return value 0)
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Run Local Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Remote Usage
+		Usr 0 00:00:00, Sys 0 00:00:00  -  Total Local Usage
+	0  -  Run Bytes Sent By Job
+	0  -  Run Bytes Received By Job
+	0  -  Total Bytes Sent By Job
+	0  -  Total Bytes Received By Job
+...
+000 (006.000.000) 2022-04-22 19:03:21 Job submitted from host: <172.18.0.3:9618?addrs=172.18.0.3-9618&alias=aee91ccc3f7d&noUDP&sock=schedd_26_698d>
+    DAG Node: tar_t1
+    pool:condorpool
+...
+000 (007.000.000) 2022-04-22 19:03:21 Job submitted from host: <172.18.0.3:9618?addrs=172.18.0.3-9618&alias=aee91ccc3f7d&noUDP&sock=schedd_26_698d>
+    DAG Node: unzip_t5
+    pool:condorpool
+...

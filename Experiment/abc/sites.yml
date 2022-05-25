@@ -1,0 +1,31 @@
+x-pegasus:
+  apiLang: python
+  createdBy: sai
+  createdOn: 04-22-22T11:18:48Z
+pegasus: '5.0'
+sites:
+- name: local
+  directories:
+  - type: sharedScratch
+    path: /home/sai/Desktop/ISI/Genetic Algorithms/Experiment/abc/scratch
+    sharedFileSystem: false
+    fileServers:
+    - url: file:///home/sai/Desktop/ISI/Genetic Algorithms/Experiment/abc/scratch
+      operation: all
+  - type: localStorage
+    path: /home/sai/Desktop/ISI/Genetic Algorithms/Experiment/abc/output
+    sharedFileSystem: false
+    fileServers:
+    - url: file:///home/sai/Desktop/ISI/Genetic Algorithms/Experiment/abc/output
+      operation: all
+- name: condorpool
+  directories: []
+  profiles:
+    pegasus:
+      style: condor
+      data.configuration: condorio
+      clusters.num: 2
+    condor:
+      universe: vanilla
+      periodic_remove: (JobStatus == 5) && ((CurrentTime - EnteredCurrentStatus) >
+        10)

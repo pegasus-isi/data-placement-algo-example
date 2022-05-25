@@ -1,0 +1,40 @@
+######################################################################
+# PEGASUS WMS GENERATED SUBMIT FILE
+# DAG : example, Index = 0, Count = null
+# SUBMIT FILE NAME : clean_up_local_level_3_0.sub
+######################################################################
+stream_error  = false
+stream_output = false
+environment = "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin CONDOR_JOBID=$(cluster).$(process) PEGASUS_WF_UUID=5907d493-ec97-486b-b835-f38040df52e8 PEGASUS_WF_LABEL=example PEGASUS_DAG_JOB_ID=clean_up_local_level_3_0 PEGASUS_SITE=local"
+arguments = " -n pegasus::cleanup -N null -i - -R local  -L example -T 2022-04-22T19:02:44+00:00 /usr/bin/../bin/pegasus-transfer "
+error = /srv/submituser/pegasus/example/run0002//00/00/clean_up_local_level_3_0.err
+executable = /usr/bin/../bin/pegasus-kickstart
+input = /srv/submituser/pegasus/example/run0002//00/00/clean_up_local_level_3_0.in
+log = /srv/submituser/pegasus/example/run0002/example-0.log
+notification = NEVER
+output = /srv/submituser/pegasus/example/run0002//00/00/clean_up_local_level_3_0.out
+periodic_release = False
+periodic_remove = (JobStatus == 5) && ((CurrentTime - EnteredCurrentStatus) > 30)
+priority = 1000
+submit_event_user_notes = pool:local
+transfer_executable = false
+universe = local
++pegasus_generator = "Pegasus"
++pegasus_root_wf_uuid = "5907d493-ec97-486b-b835-f38040df52e8"
++pegasus_wf_uuid = "5907d493-ec97-486b-b835-f38040df52e8"
++pegasus_version = "5.0.1"
++pegasus_wf_name = "example-0"
++pegasus_wf_time = "20220422T190245+0000"
++pegasus_wf_xformation = "pegasus::cleanup"
++pegasus_wf_dax_job_id = "null"
++pegasus_wf_dag_job_id = "clean_up_local_level_3_0"
++pegasus_job_class = 8
++pegasus_site = "local"
++pegasus_job_runtime = 0
++pegasus_cores = 1
++pegasus_gpus = 1
++pegasus_cluster_size = 1
+queue
+######################################################################
+# END OF SUBMIT FILE
+######################################################################

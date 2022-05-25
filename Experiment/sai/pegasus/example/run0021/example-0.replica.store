@@ -1,0 +1,6 @@
+# file-based replica catalog: 2022-04-22T11:26:07.271-07:00
+ds1.txt /home/sai/Desktop/ISI/Genetic_Algorithms/Experiment/input/ds1.txt priority="10" site="local"
+ds2.txt /home/sai/Desktop/ISI/Genetic_Algorithms/Experiment/input/ds2.txt priority="10" site="local"
+ds3.txt /home/sai/Desktop/ISI/Genetic_Algorithms/Experiment/input/ds3.txt priority="10" site="local"
+ds4.txt /home/sai/Desktop/ISI/Genetic_Algorithms/Experiment/input/ds4.txt priority="10" site="local"
+ds5.tar.gz /home/sai/Desktop/ISI/Genetic_Algorithms/Experiment/input/ds5.tar.gz priority="10" site="local"

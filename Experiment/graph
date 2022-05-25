@@ -1,0 +1,168 @@
+x-pegasus:
+  apiLang: python
+  createdBy: sai
+  createdOn: 04-22-22T11:02:45Z
+pegasus: '5.0'
+name: example
+replicaCatalog:
+  replicas:
+  - lfn: ds1.txt
+    pfns:
+    - site: local
+      pfn: /home/sai/Desktop/ISI/Genetic Algorithms/Experiment/input/ds1.txt
+  - lfn: ds2.txt
+    pfns:
+    - site: local
+      pfn: /home/sai/Desktop/ISI/Genetic Algorithms/Experiment/input/ds2.txt
+  - lfn: ds3.txt
+    pfns:
+    - site: local
+      pfn: /home/sai/Desktop/ISI/Genetic Algorithms/Experiment/input/ds3.txt
+  - lfn: ds4.txt
+    pfns:
+    - site: local
+      pfn: /home/sai/Desktop/ISI/Genetic Algorithms/Experiment/input/ds4.txt
+  - lfn: ds5.tar.gz
+    pfns:
+    - site: local
+      pfn: /home/sai/Desktop/ISI/Genetic Algorithms/Experiment/input/ds5.tar.gz
+transformationCatalog:
+  transformations:
+  - name: tar
+    sites:
+    - name: condorpool
+      pfn: /bin/tar
+      type: installed
+  - name: unzip
+    sites:
+    - name: condorpool
+      pfn: /bin/gunzip
+      type: installed
+jobs:
+- type: job
+  name: tar
+  id: t1
+  arguments:
+  - -czvf
+  - result.tar.gz
+  - input/ds1.txt
+  - input/ds2.txt
+  uses:
+  - lfn: ds1.txt
+    metadata:
+      creator: sai
+    type: input
+  - lfn: ds2.txt
+    metadata:
+      creator: sai
+    type: input
+  profiles:
+    condor:
+      requirements: MACHINE_SPECIAL_ID == 1
+    pegasus:
+      label: top
+- type: job
+  name: tar
+  id: t2
+  arguments:
+  - -czvf
+  - result.tar.gz
+  - input/ds1.txt
+  - input/ds2.txt
+  - ds6.txt
+  uses:
+  - lfn: ds6.txt
+    type: input
+  - lfn: ds1.txt
+    metadata:
+      creator: sai
+    type: input
+  - lfn: ds2.txt
+    metadata:
+      creator: sai
+    type: input
+  profiles:
+    condor:
+      requirements: MACHINE_SPECIAL_ID == 1
+    pegasus:
+      label: top
+- type: job
+  name: tar
+  id: t3
+  arguments:
+  - -czvf
+  - result.tar.gz
+  - input/ds1.txt
+  - input/ds2.txt
+  - input/ds3.txt
+  - ds6.txt
+  uses:
+  - lfn: ds6.txt
+    type: input
+  - lfn: ds1.txt
+    metadata:
+      creator: sai
+    type: input
+  - lfn: ds3.txt
+    metadata:
+      creator: sai
+    type: input
+  - lfn: ds2.txt
+    metadata:
+      creator: sai
+    type: input
+  profiles:
+    condor:
+      requirements: MACHINE_SPECIAL_ID == 1
+    pegasus:
+      label: top
+- type: job
+  name: tar
+  id: t4
+  arguments:
+  - -czvf
+  - ds6.tar.gz
+  - input/ds3.txt
+  - input/ds4.txt
+  - ds6.txt
+  uses:
+  - lfn: ds6.txt
+    type: input
+  - lfn: ds3.txt
+    metadata:
+      creator: sai
+    type: input
+  - lfn: ds4.txt
+    metadata:
+      creator: sai
+    type: input
+  profiles:
+    condor:
+      requirements: MACHINE_SPECIAL_ID == 1
+    pegasus:
+      label: top
+- type: job
+  name: unzip
+  id: t5
+  arguments:
+  - input/ds5.tar.gz
+  uses:
+  - lfn: ds5.tar.gz
+    metadata:
+      creator: sai
+    type: input
+  - lfn: ds6.txt
+    type: output
+    stageOut: true
+    registerReplica: true
+  profiles:
+    condor:
+      requirements: MACHINE_SPECIAL_ID == 1
+    pegasus:
+      label: top
+jobDependencies:
+- id: t5
+  children:
+  - t4
+  - t2
+  - t3

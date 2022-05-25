@@ -1,0 +1,12 @@
+[
+ { "type": "transfer",
+   "linkage": "output",
+   "lfn": "ds6.txt",
+   "id": 1,
+   "src_urls": [
+     { "site_label": "local", "url": "file:///srv/scratch/submituser/pegasus/example/run0002/./ds6.txt" }
+   ],
+   "dest_urls": [
+     { "site_label": "local", "url": "file:///srv/output/ds6.txt" }
+   ] }
+]

@@ -1,0 +1,8 @@
+ts=2022-04-22T06:19:06.168077Z event=task.info xwf.id=afcb7964-5dc6-48f1-a8b5-c8c0c128e690 task.id="t4" type="1" type_desc="compute" transformation="tar" argv="-czvf ds6.tar.gz input/ds3.txt input/ds4.txt ds6.txt" 
+ts=2022-04-22T06:19:06.168322Z event=task.info xwf.id=afcb7964-5dc6-48f1-a8b5-c8c0c128e690 task.id="t2" type="1" type_desc="compute" transformation="tar" argv="-czvf result.tar.gz input/ds1.txt input/ds2.txt ds6.txt" 
+ts=2022-04-22T06:19:06.168488Z event=task.info xwf.id=afcb7964-5dc6-48f1-a8b5-c8c0c128e690 task.id="t3" type="1" type_desc="compute" transformation="tar" argv="-czvf result.tar.gz input/ds1.txt input/ds2.txt input/ds3.txt ds6.txt" 
+ts=2022-04-22T06:19:06.168605Z event=task.info xwf.id=afcb7964-5dc6-48f1-a8b5-c8c0c128e690 task.id="t1" type="1" type_desc="compute" transformation="tar" argv="-czvf result.tar.gz input/ds1.txt input/ds2.txt" 
+ts=2022-04-22T06:19:06.168751Z event=task.info xwf.id=afcb7964-5dc6-48f1-a8b5-c8c0c128e690 task.id="t5" type="1" type_desc="compute" transformation="gzip" argv="input/ds5.tar.gz" 
+ts=2022-04-22T06:19:06.168918Z event=task.edge xwf.id=afcb7964-5dc6-48f1-a8b5-c8c0c128e690 parent.task.id="t5" child.task.id="t4" 
+ts=2022-04-22T06:19:06.169014Z event=task.edge xwf.id=afcb7964-5dc6-48f1-a8b5-c8c0c128e690 parent.task.id="t5" child.task.id="t2" 
+ts=2022-04-22T06:19:06.169157Z event=task.edge xwf.id=afcb7964-5dc6-48f1-a8b5-c8c0c128e690 parent.task.id="t5" child.task.id="t3" 

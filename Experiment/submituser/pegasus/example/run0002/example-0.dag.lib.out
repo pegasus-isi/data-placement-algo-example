@@ -1,0 +1,4 @@
+Pegasus DAGMAN is /usr/lib64/python3.6/site-packages/Pegasus/cli/pegasus-dagman.py
+2022-04-22 19:02:49,063:INFO:pegasus-dagman(158): DAGMAN_COPY_TO_SPOOL is set to b'false\n'
+2022-04-22 19:02:49,067:INFO:pegasus-dagman(114): Launched Dagman with Pid 1190
+2022-04-22 19:02:49,069:INFO:pegasus-dagman(141): Launched Monitord with Pid 1193

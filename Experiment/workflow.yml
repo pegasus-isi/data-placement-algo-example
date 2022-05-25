@@ -1,0 +1,125 @@
+x-pegasus: {apiLang: python, createdBy: submituser, createdOn: '04-22-22T19:02:44Z'}
+pegasus: '5.0'
+name: example
+siteCatalog:
+  sites:
+  - name: local
+    directories:
+    - type: sharedScratch
+      path: /srv/scratch
+      sharedFileSystem: false
+      fileServers:
+      - {url: 'file:///srv/scratch', operation: all}
+    - type: localStorage
+      path: /srv/output
+      sharedFileSystem: false
+      fileServers:
+      - {url: 'file:///srv/output', operation: all}
+  - name: condorpool
+    directories: []
+    profiles:
+      pegasus: {style: condor, data.configuration: condorio}
+      condor: {universe: vanilla}
+replicaCatalog:
+  replicas:
+  - lfn: ds1.txt
+    pfns:
+    - {site: local, pfn: /srv/input/ds1.txt}
+  - lfn: ds2.txt
+    pfns:
+    - {site: local, pfn: /srv/input/ds2.txt}
+  - lfn: ds3.txt
+    pfns:
+    - {site: local, pfn: /srv/input/ds3.txt}
+  - lfn: ds4.txt
+    pfns:
+    - {site: local, pfn: /srv/input/ds4.txt}
+  - lfn: ds5.tar.gz
+    pfns:
+    - {site: local, pfn: /srv/input/ds5.tar.gz}
+transformationCatalog:
+  transformations:
+  - name: tar
+    sites:
+    - {name: condorpool, pfn: /bin/tar, type: installed}
+  - name: unzip
+    sites:
+    - {name: condorpool, pfn: /bin/gunzip, type: installed}
+jobs:
+- type: job
+  name: tar
+  id: t1
+  arguments: [-czvf, result.tar.gz, ds1.txt, ds2.txt]
+  uses:
+  - lfn: ds2.txt
+    metadata: {creator: sai}
+    type: input
+  - lfn: ds1.txt
+    metadata: {creator: sai}
+    type: input
+  profiles:
+    condor: {requirements: MACHINE_SPECIAL_ID == 1}
+    pegasus: {label: top}
+- type: job
+  name: tar
+  id: t2
+  arguments: [-czvf, result.tar.gz, ds1.txt, ds2.txt, ds6.txt]
+  uses:
+  - {lfn: ds6.txt, type: input}
+  - lfn: ds2.txt
+    metadata: {creator: sai}
+    type: input
+  - lfn: ds1.txt
+    metadata: {creator: sai}
+    type: input
+  profiles:
+    condor: {requirements: MACHINE_SPECIAL_ID == 1}
+    pegasus: {label: top}
+- type: job
+  name: tar
+  id: t3
+  arguments: [-czvf, result.tar.gz, ds1.txt, ds2.txt, ds3.txt, ds6.txt]
+  uses:
+  - {lfn: ds6.txt, type: input}
+  - lfn: ds2.txt
+    metadata: {creator: sai}
+    type: input
+  - lfn: ds3.txt
+    metadata: {creator: sai}
+    type: input
+  - lfn: ds1.txt
+    metadata: {creator: sai}
+    type: input
+  profiles:
+    condor: {requirements: MACHINE_SPECIAL_ID == 1}
+    pegasus: {label: top}
+- type: job
+  name: tar
+  id: t4
+  arguments: [-czvf, ds6.tar.gz, ds3.txt, ds4.txt, ds6.txt]
+  uses:
+  - lfn: ds4.txt
+    metadata: {creator: sai}
+    type: input
+  - {lfn: ds6.txt, type: input}
+  - lfn: ds3.txt
+    metadata: {creator: sai}
+    type: input
+  profiles:
+    condor: {requirements: MACHINE_SPECIAL_ID == 1}
+    pegasus: {label: top}
+- type: job
+  name: unzip
+  id: t5
+  arguments: [ds5.tar.gz]
+  uses:
+  - {lfn: ds6.txt, type: output, stageOut: true, registerReplica: true}
+  - lfn: ds5.tar.gz
+    metadata: {creator: sai}
+    type: input
+  profiles:
+    condor: {requirements: MACHINE_SPECIAL_ID == 1}
+    pegasus: {label: top}
+jobDependencies:
+- id: t5
+  children: [t4, t3, t2]

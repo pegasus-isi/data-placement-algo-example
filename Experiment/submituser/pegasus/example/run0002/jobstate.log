@@ -1,0 +1,25 @@
+1650654170 INTERNAL *** MONITORD_STARTED ***
+1650654169 INTERNAL *** DAGMAN_STARTED 2.0 ***
+1650654170 create_dir_example_0_local SUBMIT 3.0 local - 1
+1650654170 create_dir_example_0_local EXECUTE 3.0 local - 1
+1650654172 create_dir_example_0_local JOB_TERMINATED 3.0 local - 1
+1650654175 create_dir_example_0_local JOB_SUCCESS 0 local - 1
+1650654175 create_dir_example_0_local POST_SCRIPT_STARTED 3.0 local - 1
+1650654175 create_dir_example_0_local POST_SCRIPT_TERMINATED 3.0 local - 1
+1650654180 create_dir_example_0_local POST_SCRIPT_SUCCESS 0 local - 1
+1650654185 stage_in_local_local_0_0 SUBMIT 4.0 local - 2
+1650654185 stage_in_local_local_1_0 SUBMIT 5.0 local - 3
+1650654185 stage_in_local_local_0_0 EXECUTE 4.0 local - 2
+1650654185 stage_in_local_local_1_0 EXECUTE 5.0 local - 3
+1650654189 stage_in_local_local_0_0 JOB_TERMINATED 4.0 local - 2
+1650654190 stage_in_local_local_0_0 JOB_SUCCESS 0 local - 2
+1650654190 stage_in_local_local_0_0 POST_SCRIPT_STARTED 4.0 local - 2
+1650654189 stage_in_local_local_1_0 JOB_TERMINATED 5.0 local - 3
+1650654190 stage_in_local_local_1_0 JOB_SUCCESS 0 local - 3
+1650654190 stage_in_local_local_1_0 POST_SCRIPT_STARTED 5.0 local - 3
+1650654190 stage_in_local_local_1_0 POST_SCRIPT_TERMINATED 5.0 local - 3
+1650654195 stage_in_local_local_1_0 POST_SCRIPT_SUCCESS 0 local - 3
+1650654190 stage_in_local_local_0_0 POST_SCRIPT_TERMINATED 4.0 local - 2
+1650654195 stage_in_local_local_0_0 POST_SCRIPT_SUCCESS 0 local - 2
+1650654201 tar_t1 SUBMIT 6.0 condorpool - 4
+1650654201 unzip_t5 SUBMIT 7.0 condorpool - 5

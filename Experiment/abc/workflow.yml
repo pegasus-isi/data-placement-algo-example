@@ -1,0 +1,100 @@
+x-pegasus:
+  apiLang: python
+  createdBy: sai
+  createdOn: 04-22-22T11:18:48Z
+pegasus: '5.0'
+name: diamond
+jobs:
+- type: job
+  name: preprocess
+  id: ID0000001
+  arguments:
+  - -i
+  - f.a
+  - -o
+  - f.b1
+  - -o
+  - f.b2
+  uses:
+  - lfn: f.b1
+    type: output
+    stageOut: false
+    registerReplica: false
+  - lfn: f.a
+    type: input
+  - lfn: f.b2
+    type: output
+    stageOut: false
+    registerReplica: false
+  profiles:
+    pegasus:
+      label: cluster-1
+- type: job
+  name: findrange
+  id: ID0000002
+  arguments:
+  - -i
+  - f.b1
+  - -o
+  - f.c1
+  uses:
+  - lfn: f.c1
+    type: output
+    stageOut: false
+    registerReplica: false
+  - lfn: f.b1
+    type: input
+  profiles:
+    pegasus:
+      label: cluster-1
+- type: job
+  name: findrange
+  id: ID0000003
+  arguments:
+  - -i
+  - f.b2
+  - -o
+  - f.c2
+  uses:
+  - lfn: f.b2
+    type: input
+  - lfn: f.c2
+    type: output
+    stageOut: false
+    registerReplica: false
+  profiles:
+    pegasus:
+      label: cluster-1
+- type: job
+  name: analyze
+  id: ID0000004
+  arguments:
+  - -i
+  - f.c1
+  - -i
+  - f.c2
+  - -o
+  - f.d
+  uses:
+  - lfn: f.c1
+    type: input
+  - lfn: f.d
+    type: output
+    stageOut: true
+    registerReplica: true
+  - lfn: f.c2
+    type: input
+  profiles:
+    pegasus:
+      label: cluster-1
+jobDependencies:
+- id: ID0000001
+  children:
+  - ID0000003
+  - ID0000002
+- id: ID0000002
+  children:
+  - ID0000004
+- id: ID0000003
+  children:
+  - ID0000004

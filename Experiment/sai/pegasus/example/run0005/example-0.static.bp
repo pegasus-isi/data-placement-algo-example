@@ -1,0 +1,8 @@
+ts=2022-04-22T06:19:44.826089Z event=task.info xwf.id=7f14d238-4f3e-4e59-9149-df9bc302b21b task.id="t4" type="1" type_desc="compute" transformation="tar" argv="-czvf ds6.tar.gz input/ds3.txt input/ds4.txt ds6.txt" 
+ts=2022-04-22T06:19:44.826360Z event=task.info xwf.id=7f14d238-4f3e-4e59-9149-df9bc302b21b task.id="t2" type="1" type_desc="compute" transformation="tar" argv="-czvf result.tar.gz input/ds1.txt input/ds2.txt ds6.txt" 
+ts=2022-04-22T06:19:44.826540Z event=task.info xwf.id=7f14d238-4f3e-4e59-9149-df9bc302b21b task.id="t3" type="1" type_desc="compute" transformation="tar" argv="-czvf result.tar.gz input/ds1.txt input/ds2.txt input/ds3.txt ds6.txt" 
+ts=2022-04-22T06:19:44.826654Z event=task.info xwf.id=7f14d238-4f3e-4e59-9149-df9bc302b21b task.id="t1" type="1" type_desc="compute" transformation="tar" argv="-czvf result.tar.gz input/ds1.txt input/ds2.txt" 
+ts=2022-04-22T06:19:44.826801Z event=task.info xwf.id=7f14d238-4f3e-4e59-9149-df9bc302b21b task.id="t5" type="1" type_desc="compute" transformation="unzip" argv="input/ds5.tar.gz" 
+ts=2022-04-22T06:19:44.826964Z event=task.edge xwf.id=7f14d238-4f3e-4e59-9149-df9bc302b21b parent.task.id="t5" child.task.id="t4" 
+ts=2022-04-22T06:19:44.827055Z event=task.edge xwf.id=7f14d238-4f3e-4e59-9149-df9bc302b21b parent.task.id="t5" child.task.id="t2" 
+ts=2022-04-22T06:19:44.827200Z event=task.edge xwf.id=7f14d238-4f3e-4e59-9149-df9bc302b21b parent.task.id="t5" child.task.id="t3" 

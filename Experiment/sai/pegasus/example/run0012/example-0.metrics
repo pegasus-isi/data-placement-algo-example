@@ -1,0 +1,43 @@
+{
+  "client": "pegasus-plan",
+  "version": "5.0.1",
+  "wf_api": "python",
+  "type": "error",
+  "start_time": 1.65060946375E9,
+  "end_time": 1.650609464562E9,
+  "duration": 0.812,
+  "exitcode": 1,
+  "root_wf_uuid": "58b22cb4-2707-4467-a601-2e32e299fb6e",
+  "wf_uuid": "58b22cb4-2707-4467-a601-2e32e299fb6e",
+  "data_config": "condorio",
+  "planner_args": "--output-sites local --cleanup inplace --submit graph --json ",
+  "uses_pmc": false,
+  "wf_metrics": {
+    "compute_tasks": 5,
+    "dax_tasks": 0,
+    "dag_tasks": 0,
+    "total_tasks": 5,
+    "deleted_tasks": 0,
+    "dax_input_files": 5,
+    "dax_inter_files": 1,
+    "dax_output_files": 0,
+    "dax_total_files": 6,
+    "compute_jobs": 5,
+    "clustered_jobs": 0,
+    "si_tx_jobs": 0,
+    "so_tx_jobs": 0,
+    "inter_tx_jobs": 0,
+    "reg_jobs": 0,
+    "cleanup_jobs": 0,
+    "create_dir_jobs": 0,
+    "dax_jobs": 0,
+    "dag_jobs": 0,
+    "chmod_jobs": 0,
+    "total_jobs": 5
+  },
+  "app_metrics": {
+    "name": "example"
+  },
+  "error": "java.lang.RuntimeException: Unable to parse URL file:///home/sai/Desktop/ISI/Genetic Algorithms/Experiment/input\n\tat edu.isi.pegasus.common.util.PegasusURL.parse(PegasusURL.java:113)\n\tat edu.isi.pegasus.common.util.PegasusURL.\u003cinit\u003e(PegasusURL.java:88)\n\tat edu.isi.pegasus.planner.transfer.generator.StageIn.constructFileTX(StageIn.java:527)\n\tat edu.isi.pegasus.planner.refiner.TransferEngine.processParents(TransferEngine.java:426)\n\tat edu.isi.pegasus.planner.refiner.TransferEngine.addTransferNodes(TransferEngine.java:267)\n\tat edu.isi.pegasus.planner.refiner.MainEngine.runPlanner(MainEngine.java:219)\n\tat edu.isi.pegasus.planner.client.CPlanner.executeCommand(CPlanner.java:611)\n\tat edu.isi.pegasus.planner.client.CPlanner.executeCommand(CPlanner.java:322)\n\tat edu.isi.pegasus.planner.client.CPlanner.main(CPlanner.java:209)\n"
+}
+
