@@ -1,0 +1,83 @@
+version: "3.9"
+services:
+  cm:
+    image: htcondor/cm:9.2-el7
+    environment:
+      - LANG=en_US.UTF-8
+      - USE_POOL_PASSWORD=yes
+    volumes:
+      - type: bind
+        source: ./passwd
+        target: /etc/condor/passwords-orig.d
+      - type: bind
+        source: ./config/cm
+        target: /root/config
+
+  execute:
+    image: htcondor/execute:9.2-el7
+    environment:
+      - LANG=en_US.UTF-8
+      - CONDOR_HOST=cm
+      - NUM_CPUS=2
+      - MEMORY=2048
+      - USE_POOL_PASSWORD=yes
+    volumes:
+      - type: bind
+        source: ./passwd
+        target: /etc/condor/passwords-orig.d
+      - type: bind
+        source: ./config/execute
+        target: /root/config
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2048M
+        reservations:
+          cpus: '2'
+          memory: 2048M
+    depends_on:
+      - cm
+
+  edge:
+    image: htcondor/execute:9.2-el7
+    environment:
+      - LANG=en_US.UTF-8
+      - CONDOR_HOST=cm
+      - NUM_CPUS=2
+      - MEMORY=2048
+      - USE_POOL_PASSWORD=yes
+    volumes:
+      - type: bind
+        source: ./passwd
+        target: /etc/condor/passwords-orig.d
+      - type: bind
+        source: ./config/edge
+        target: /root/config
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2048M
+        reservations:
+          cpus: '2'
+          memory: 2048M
+    depends_on:
+      - cm
+  submit:
+    build: .
+    environment:
+      - LANG=en_US.UTF-8
+      - CONDOR_HOST=cm
+      - USE_POOL_PASSWORD=yes
+    volumes:
+      - type: bind
+        source: ./passwd
+        target: /etc/condor/passwords-orig.d
+      - type: bind
+        source: ./config/submit
+        target: /root/config
+      - ./:/srv
+    depends_on:
+      - cm
