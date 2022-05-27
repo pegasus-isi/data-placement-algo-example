@@ -33,7 +33,7 @@ class Example_WF(object):
         unzip = Transformation(
             "unzip",
             site="condorpool",
-            pfn="/bin/gunzip",
+            pfn="/bin/tar",
             is_stageable=False,
         )
 
